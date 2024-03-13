@@ -16,5 +16,6 @@ runs:
     steps:
         - name: return version
           id: mutate-input
+          shell: bash
           run: |
             echo "OUT=${{ inputs.my-input }} mutated" >> $GITHUB_OUTPUT
