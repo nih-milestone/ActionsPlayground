@@ -10,6 +10,9 @@ jobs:
         
         steps:
 
+            - name: Checkout source
+              uses: actions/checkout@v4
+
             - name: Call composite action
               id: composite-action
               uses: ./.github/actions/my-first-action
