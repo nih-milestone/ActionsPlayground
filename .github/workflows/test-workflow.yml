@@ -24,5 +24,7 @@ jobs:
                 echo "Result: '${{ steps.composite-action.outputs.my-output }}'"
 
             - name: 'Create notice message'
+              env:
+                NOTICE: "### Markdown\nWill thi even work?<br/>That would be really cool!"
               run: |
-                echo "::notice file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
+                echo "::notice title=Artifacts::${{ env.NOTICE }}"
