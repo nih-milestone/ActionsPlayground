@@ -12,7 +12,7 @@ jobs:
 
             - name: Call composite action
               id: composite-action
-              uses: actions/my-first-action
+              uses: ./actions/my-first-action
               with:
                 my-input: 'Hello World'
 
