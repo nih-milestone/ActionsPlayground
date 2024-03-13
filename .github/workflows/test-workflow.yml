@@ -1,0 +1,21 @@
+name: Test workflow
+
+on:
+    push:
+
+jobs:
+    my-job:
+        name: 'Test Job'
+        runs-on: ubuntu-latest
+        
+        steps:
+
+            - name: Call composite action
+              id: composite-action
+              uses: actions/my-first-action
+              with:
+                my-input: 'Hello World'
+
+            - name: Print composite action output
+              run: |
+                echo "Result: '${{ steps.composite-action.outputs.my-output }}'"

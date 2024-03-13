@@ -1,0 +1,21 @@
+name: My first reusable action
+
+description: "Reusable action"
+
+inputs:
+    my-input:
+        type: string
+        required: true
+outputs:
+    my-output: 
+        description: "the read or updated version"
+        value: ${{ steps.mutate-input.outputs.OUT }}
+
+runs:
+    using: "composite"
+    steps:
+        - name: return version
+          shell: powershell
+          id: mutate-input
+          run: |
+            echo "OUT=${{ inputs.my-input }} mutated" >> $GITHUB_OUTPUT
