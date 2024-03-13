@@ -22,3 +22,7 @@ jobs:
             - name: Print composite action output
               run: |
                 echo "Result: '${{ steps.composite-action.outputs.my-output }}'"
+
+            - name: 'Create notice message'
+              run: |
+                echo "::notice file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
