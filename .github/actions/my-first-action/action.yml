@@ -15,7 +15,6 @@ runs:
     using: "composite"
     steps:
         - name: return version
-          shell: powershell
           id: mutate-input
           run: |
             echo "OUT=${{ inputs.my-input }} mutated" >> $GITHUB_OUTPUT
