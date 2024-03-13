@@ -8,7 +8,7 @@ inputs:
         required: true
 outputs:
     my-output: 
-        description: "the read or updated version"
+        description: "The mutated my-input as output"
         value: ${{ steps.mutate-input.outputs.OUT }}
 
 runs:
@@ -18,4 +18,4 @@ runs:
           id: mutate-input
           shell: bash
           run: |
-            echo "OUT=${{ inputs.my-input }} mutated" >> $GITHUB_OUTPUT
+            echo "OUT=*** ${{ inputs.my-input }} *** mutated" >> $GITHUB_OUTPUT
