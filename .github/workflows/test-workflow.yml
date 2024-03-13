@@ -25,6 +25,6 @@ jobs:
 
             - name: 'Create notice message'
               env:
-                NOTICE: "### Markdown\nWill thi even work?<br/>That would be really cool!"
+                NOTICE: "### Artifacts\nWill this even work?<br/>That would be really cool!"
               run: |
-                echo "::notice title=Artifacts::${{ env.NOTICE }}"
+                echo "${{ env.NOTICE }}" >> $GITHUB_STEP_SUMMARY
