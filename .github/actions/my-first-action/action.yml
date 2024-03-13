@@ -18,4 +18,5 @@ runs:
           id: mutate-input
           shell: bash
           run: |
-            echo "OUT=*** ${{ inputs.my-input }} *** mutated" >> $GITHUB_OUTPUT
+            dynamicOutput="`cat ./publish/output.txt`"
+            echo "OUT=*** ${{ inputs.my-input }} *** mutated - $dynamicOutput" >> $GITHUB_OUTPUT
